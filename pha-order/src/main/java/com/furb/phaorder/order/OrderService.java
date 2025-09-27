@@ -5,40 +5,41 @@ import com.furb.phaorder.configuration.RabbitMQConnection;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tools.jackson.databind.ObjectMapper;
 
+import java.util.Hashtable;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class OrderService {
-
+    private final Map<UUID, Order> orderStore = new Hashtable<>(16);
     private final CustomMessageSender customMessageSender;
 
-
-    private final ObjectMapper objectMapper;
-
-    public void createOrder(Order order) {
-        log.info("Criando pedido: {}", order.id());
-        
-        verifyStock(order);
+    public boolean exists(UUID orderId) {
+        return orderStore.containsKey(orderId);
     }
 
-    private void verifyStock(Order order) {
+    public void saveOrder(Order order) {
+        log.info("Criando pedido: {}", order.id());
+        orderStore.put(order.id(), order);
+        sendOrderToInventory(order);
+    }
+
+    private void sendOrderToInventory(Order order) {
         var message = new OrderMessage(
             order.id(),
             order.product(),
             order.quantity()
         );
 
+        log.info("Enviando para verificação de estoque: {}", order.id());
         customMessageSender.sendMessage(
             message,
             RabbitMQConnection.PHARMACY_EXCHANGE,
             RabbitMQConnection.VERIFY_STOCK_ROUTING_KEY
         );
-
-        log.info("Enviado para verificação de estoque: {}", order.id());
     }
 
     public void processStockResponse(StockResponseMessage message) {
@@ -54,8 +55,9 @@ public class OrderService {
     }
 
     private void processPayment(UUID orderId) {
+        var order = orderStore.get(orderId);
         customMessageSender.sendMessage(
-            orderId,
+            OrderConverter.toPayment(order),
             RabbitMQConnection.PHARMACY_EXCHANGE,
             RabbitMQConnection.PROCESS_PAYMENT_ROUTING_KEY
         );

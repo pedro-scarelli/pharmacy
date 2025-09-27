@@ -6,41 +6,54 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Hashtable;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class PaymentService {
-
+    private final Map<UUID, Payment> paymentStore = new Hashtable<>(16);
     private final CustomMessageSender customMessageSender;
 
-    public void processPayment(UUID orderId) {
-        var orderValue = getOrderValue(orderId);
-        new Payment(
-            orderId,
-            PaymentStatus.PROCESSING,
-            orderValue,
-            LocalDateTime.now(),
-            "CARD"
-        );
-        savePayment(orderId, orderValue);
+    private double userBalance = 1000.0D;
 
+    public void processPayment(Payment payment) {
+        if (!savePayment(payment)) {
+            return;
+        }
+
+        log.info("Enviando pagamento para emissão de NF: {}", payment.getOrderId());
+        var invoicePayload = PaymentConverter.from(payment);
         customMessageSender.sendMessage(
-                orderId,
+                invoicePayload,
                 RabbitMQConnection.PHARMACY_EXCHANGE,
                 RabbitMQConnection.PAYMENT_RESPONSE_ROUTING_KEY
         );
-        
-        log.info("Enviado para emissão de NF: {}", orderId);
     }
 
-    private double getOrderValue(UUID orderId) {
-        return 100d;
-    }
+    private boolean savePayment(Payment payment) {
+        var ok =  true;
+        var amount = payment.getAmount();
+        if (userBalance < amount || paymentStore.containsKey(payment.getId())) {
+            payment.setStatus(PaymentStatus.ERROR);
+            ok = false;
+        } else {
+            userBalance -= amount;
+            payment.setStatus(PaymentStatus.SUCCESS);
+        }
 
-    private void savePayment(UUID orderId, double orderValue) {
-        log.info("Salvando pagamento do pedido: {} com valor: {}", orderId.toString(), orderValue);
+        log.info(
+            "Salvando pagamento (pedido: {}, valor: {}, status: {})",
+            payment.getOrderId(),
+            payment.getAmount(),
+            payment.getStatus()
+        );
+
+        paymentStore.put(payment.getId(), payment);
+        return ok;
     }
 }

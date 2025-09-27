@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Annotation profile for pha-order" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -12,16 +13,27 @@
         </processorPath>
         <module name="pha-order" />
         <module name="pha-payment" />
-        <module name="pha-stock" />
       </profile>
-      <profile name="Annotation profile for pha-invoice" enabled="true">
+      <profile name="Annotation profile for pha-paymeny" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
         </processorPath>
+        <module name="pharmacy" />
         <module name="pha-invoice" />
+        <module name="pha-order (1)" />
+        <module name="pha-order (2)" />
+      </profile>
+      <profile name="Annotation profile for pha-stock" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
+        </processorPath>
+        <module name="pha-stock" />
       </profile>
     </annotationProcessing>
   </component>
@@ -29,8 +41,11 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="pha-invoice" options="-parameters" />
       <module name="pha-order" options="-parameters" />
+      <module name="pha-order (1)" options="-parameters" />
+      <module name="pha-order (2)" options="-parameters" />
       <module name="pha-payment" options="-parameters" />
       <module name="pha-stock" options="-parameters" />
+      <module name="pharmacy" options="-parameters" />
     </option>
   </component>
 </project>
