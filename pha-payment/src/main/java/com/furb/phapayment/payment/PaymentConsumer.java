@@ -16,12 +16,12 @@ import java.util.UUID;
 public class PaymentConsumer {
 
     private final PaymentService paymentService;
-    private final ObjectMapper objectMapper;
+    private final ObjectMapper mapper;
 
     @RabbitListener(queues = RabbitMQConnection.PAYMENT_QUEUE)
     public void receberMensagem(Message message) {
-        var orderId = objectMapper.readValue(message.getBody(), UUID.class);
-        log.info("Recebida mensagem para pagamento: {}", orderId);
-        paymentService.processPayment(orderId);
+        var payment = mapper.readValue(message.getBody(), Payment.class);
+        log.info("Processando pagamento do pedido: {}", payment.getOrderId());
+        paymentService.processPayment(payment);
     }
 }

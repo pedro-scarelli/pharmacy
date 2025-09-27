@@ -1,8 +1,0 @@
-com/furb/phastock/stock/StockConsumer.class
-com/furb/phastock/stock/StockResponseMessage.class
-com/furb/phastock/stock/OrderMessage.class
-com/furb/phastock/PhaStockApplication.class
-com/furb/phastock/stock/StockService.class
-com/furb/phastock/config/CustomMessageSender.class
-com/furb/phastock/config/RabbitMQConnection.class
-com/furb/phastock/config/RabbitMQConfig.class

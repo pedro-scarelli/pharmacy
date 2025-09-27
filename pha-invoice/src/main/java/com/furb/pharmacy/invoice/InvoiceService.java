@@ -1,49 +1,56 @@
 package com.furb.pharmacy.invoice;
 
-import com.furb.pharmacy.customer.CustomerData;
+import io.netty.handler.codec.DateFormatter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.util.UUID;
+import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @Service
 public class InvoiceService {
-    private static final String MARKER = "=".repeat(80);
+    private static final long TIMEOUT = TimeUnit.SECONDS.toMillis(1L);
+    private static final int WIDTH = 36;
+    private static final String MARKER = "=".repeat(1 + 2 * WIDTH);
 
-    // NOTE only printing invoice info for demo purposes
-    public void process(UUID orderId) {
-        var invoice = getInvoiceInfo(orderId);
-        var text = buildInvoiceText(invoice);
-        log.info(text);
-    }
+    public void process(InvoiceMessage message) {
+        // NOTE avoiding contention between loggers when printing the invoice
+        try {
+            Thread.sleep(TIMEOUT);
+        } catch (InterruptedException e) {
+            log.error("{}", e.getMessage(), e);
+        }
 
-    private static InvoiceMessage getInvoiceInfo(UUID orderId) {
-        return new InvoiceMessage(
-                orderId,
-                199.90,
-                "USD",
-                "CREDIT_CARD",
-                LocalDate.now(),
-                new CustomerData("", "", "")
-        );
+        var invoiceText = buildInvoiceText(message);
+        var output = String.format("%n%s", invoiceText);
+        log.info(output);
     }
 
     private static String buildInvoiceText(InvoiceMessage message) {
-        var amount = String.format("%.2f %s", message.amount(), message.currency());
         return String.join(
             System.lineSeparator(),
             MARKER,
-            buildLine("CUSTOMER", message.customer().id()),
             buildLine("ORDER", message.orderId().toString()),
-            buildLine("TOTAL", amount),
+            buildLine("CUSTOMER ID", message.customer().id()),
+            buildLine("CUSTOMER NAME", message.customer().name()),
+            buildLine("TOTAL", formatAmount(message)),
             buildLine("PAYMENT METHOD", message.paymentMethod()),
+            buildLine("PAYMENT DATE", formatDate(message)),
             MARKER
         );
     }
 
     private static String buildLine(String label, String value) {
-        return String.format("%16s %16s", label, value);
+        var format = "%-" + WIDTH + "s %" + WIDTH + "s";
+        return String.format(format, label, value);
+    }
+
+    private static String formatAmount(InvoiceMessage message) {
+        return String.format("%.2f %s", message.amount(), message.currency());
+    }
+
+    private static String formatDate(InvoiceMessage message) {
+        return DateTimeFormatter.ISO_DATE_TIME.format(message.paymentDate());
     }
 }

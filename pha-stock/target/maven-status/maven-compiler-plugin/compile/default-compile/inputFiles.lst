@@ -1,8 +1,0 @@
-/home/scarelli/furb/microservices/pharmacy/pha-stock/src/main/java/com/furb/phastock/PhaStockApplication.java
-/home/scarelli/furb/microservices/pharmacy/pha-stock/src/main/java/com/furb/phastock/config/CustomMessageSender.java
-/home/scarelli/furb/microservices/pharmacy/pha-stock/src/main/java/com/furb/phastock/config/RabbitMQConfig.java
-/home/scarelli/furb/microservices/pharmacy/pha-stock/src/main/java/com/furb/phastock/config/RabbitMQConnection.java
-/home/scarelli/furb/microservices/pharmacy/pha-stock/src/main/java/com/furb/phastock/stock/OrderMessage.java
-/home/scarelli/furb/microservices/pharmacy/pha-stock/src/main/java/com/furb/phastock/stock/StockConsumer.java
-/home/scarelli/furb/microservices/pharmacy/pha-stock/src/main/java/com/furb/phastock/stock/StockResponseMessage.java
-/home/scarelli/furb/microservices/pharmacy/pha-stock/src/main/java/com/furb/phastock/stock/StockService.java

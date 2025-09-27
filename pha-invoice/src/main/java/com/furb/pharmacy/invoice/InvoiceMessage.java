@@ -4,6 +4,7 @@ import com.furb.pharmacy.customer.CustomerData;
 import lombok.NonNull;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public record InvoiceMessage(
@@ -12,7 +13,7 @@ public record InvoiceMessage(
     double amount,
     String currency,
     String paymentMethod,
-    LocalDate paymentDate,
+    LocalDateTime paymentDate,
     @NonNull
     CustomerData customer
 ) {}

@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07c7e8da-f0f9-4435-b9dd-7d88880b2006" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pha-stock/src/main/java/com/furb/phastock/stock/Stock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/OrderMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/OrderMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-stock/src/main/java/com/furb/phastock/stock/OrderMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-stock/src/main/java/com/furb/phastock/stock/OrderMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-stock/src/main/java/com/furb/phastock/stock/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-stock/src/main/java/com/furb/phastock/stock/StockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pha-payment/src/main/java/com/furb/phapayment/payment/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-payment/src/main/java/com/furb/phapayment/payment/PaymentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,17 +59,17 @@
     &quot;Spring Boot.PharmacyApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/scarelli/furb/microservices/pharmacy/pha-invoice/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mumu/Documents/skull/distributed-systems/pharmacy&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -87,10 +80,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/furb/pharmacy/pagamento" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.furb.phaorder.order" />
+      <recent name="com.furb.phapayment.payment" />
       <recent name="com.furb.phaorder.config" />
       <recent name="com.furb.phapayment.config" />
       <recent name="com.furb.phastock.config" />
-      <recent name="com.furb.pharmacy.pagamento" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -103,7 +97,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PharmacyApplication">
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="pha-payment" />
       <method v="2">
@@ -163,14 +157,7 @@
       </method>
     </configuration>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
-      </set>
-    </attachedChunks>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="07c7e8da-f0f9-4435-b9dd-7d88880b2006" name="Changes" comment="" />

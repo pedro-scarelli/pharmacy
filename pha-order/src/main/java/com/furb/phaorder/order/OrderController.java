@@ -20,8 +20,11 @@ public class OrderController {
 
     @PostMapping
     public ResponseEntity<Map<String, String>> criarPedido(@RequestBody Order order) {
-        orderService.createOrder(order);
+        if (orderService.exists(order.id())) {
+            return new ResponseEntity<>(Map.of("Erro", "ID do pedido já existe!"), HttpStatus.BAD_REQUEST);
+        }
 
+        orderService.saveOrder(order);
         return new ResponseEntity<>(Map.of("pedidoId", order.id().toString()), HttpStatus.CREATED);
     }
 }
