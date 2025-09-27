@@ -2,23 +2,25 @@ package com.furb.phapayment.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.Message;
-import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
+
+import tools.jackson.databind.ObjectMapper;
 
 @Service
 @RequiredArgsConstructor
 public class CustomMessageSender {
 
+    private final ObjectMapper objectMapper;
+
     private final RabbitTemplate rabbitTemplate;
 
     public void sendMessage(Object object, String exchange, String routingKey) {
-        MessageProperties messageProperties = new MessageProperties();
+        var messageProperties = new MessageProperties();
         messageProperties.setContentType(MessageProperties.CONTENT_TYPE_JSON);
-        Message message = MessageBuilder.withBody(object.toString().getBytes())
-                                       .andProperties(messageProperties)
-                                       .build();
+        var message = new Message(objectMapper.writeValueAsBytes(object), messageProperties);
+
         rabbitTemplate.convertAndSend(
                 exchange,
                 routingKey,

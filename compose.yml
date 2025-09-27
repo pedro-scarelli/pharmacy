@@ -1,7 +1,7 @@
 services:
   invoice:
     build:
-      context: ./pharmacy_invoice
+      context: ./pha-invoice
       dockerfile: Dockerfile
     image: docker-invoice:latest
     container_name: invoice
@@ -20,7 +20,7 @@ services:
 
   order:
     build:
-      context: ./pha-orders
+      context: ./pha-order
       dockerfile: Dockerfile
     image: docker-order:latest
     container_name: order

@@ -1,22 +1,17 @@
 package com.furb.phapayment.config;
 
-import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.ConnectionFactory;
 
 public class RabbitMQConnection {
 
-    public static final String QUEUE_PAYMENT = "pagamento";
+    public static final String PAYMENT_QUEUE = "pagamento";
 
-    public static final String EXCHANGE_PHARMACY = "farmacia";
+    public static final String PHARMACY_EXCHANGE = "farmacia";
 
-    public static final String RK_RESPOSTA_PAGAMENTO = "pagamento.processado";
+    public static final String PAYMENT_RESPONSE_ROUTING_KEY = "pagamento.processado";
 
     private final ConnectionFactory factory;
-
-    private Connection connection;
-
-    private Channel channel;
 
 
     public RabbitMQConnection(RabbitMQConfig rabbitMqConfig) {
@@ -30,12 +25,10 @@ public class RabbitMQConnection {
     }
 
     private void instantiateConnection() {
-        try {
-            connection = factory.newConnection();
-            channel = connection.createChannel();
+        try (Connection connection = factory.newConnection()) {
+            var channel = connection.createChannel();
         } catch (Exception e) {
             throw new RuntimeException("Failed to create RabbitMQ connection or channel", e);
         }
     }
-
 }
