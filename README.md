@@ -41,3 +41,8 @@ curl --location 'http://localhost:8081/order' \
 ```
 
 Após enviar o pedido, os microserviços irão se comunicar via RabbitMQ para processar estoque, pagamento e emissão de nota fiscal.
+
+Toda a configuraćão do RabbitMQ é criada automaticamente pelo arquivo
+[definitions.json](definitions.json)
+
+Pedro Scarelli, João Fissmer, Caio Abraao, Arthur Utpadel e Kevin Schops
