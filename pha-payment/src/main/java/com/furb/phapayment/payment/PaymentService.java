@@ -17,9 +17,8 @@ import java.util.UUID;
 @Slf4j
 public class PaymentService {
     private final Map<UUID, Payment> paymentStore = new Hashtable<>(16);
+    private final Map<UUID, Double> balanceStore = new Hashtable<>(16);
     private final CustomMessageSender customMessageSender;
-
-    private double userBalance = 1000.0D;
 
     public void processPayment(Payment payment) {
         if (!savePayment(payment)) {
@@ -38,12 +37,15 @@ public class PaymentService {
     private boolean savePayment(Payment payment) {
         var ok =  true;
         var amount = payment.getAmount();
+        var userId = UUID.fromString(payment.getCustomerData().id());
+        var userBalance = queryUserBalance(userId);
         if (userBalance < amount || paymentStore.containsKey(payment.getId())) {
+            log.warn("Saldo indisponível para o cliente {}", userId);
             payment.setStatus(PaymentStatus.ERROR);
             ok = false;
         } else {
-            userBalance -= amount;
             payment.setStatus(PaymentStatus.SUCCESS);
+            updateUserBalance(userId, userBalance - amount);
         }
 
         log.info(
@@ -55,5 +57,19 @@ public class PaymentService {
 
         paymentStore.put(payment.getId(), payment);
         return ok;
+    }
+
+    private double queryUserBalance(UUID userId) {
+        if (!balanceStore.containsKey(userId)) {
+            var initialBalance = 1000.0D;
+            balanceStore.put(userId, initialBalance);
+            return initialBalance;
+        }
+
+        return balanceStore.get(userId);
+    }
+
+    private void updateUserBalance(UUID userId, double balance) {
+        balanceStore.put(userId, balance);
     }
 }

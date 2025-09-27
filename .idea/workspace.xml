@@ -5,30 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07c7e8da-f0f9-4435-b9dd-7d88880b2006" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/CustomerData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/OrderConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/PaymentStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pha-payment/src/main/java/com/furb/phapayment/payment/CustomerData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pha-payment/src/main/java/com/furb/phapayment/payment/InvoiceMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pha-payment/src/main/java/com/furb/phapayment/payment/PaymentConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-invoice/src/main/java/com/furb/pharmacy/invoice/InvoiceConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-invoice/src/main/java/com/furb/pharmacy/invoice/InvoiceConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-invoice/src/main/java/com/furb/pharmacy/invoice/InvoiceMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-invoice/src/main/java/com/furb/pharmacy/invoice/InvoiceMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-invoice/src/main/java/com/furb/pharmacy/invoice/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-invoice/src/main/java/com/furb/pharmacy/invoice/InvoiceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-order/src/main/java/com/furb/phaorder/order/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-payment/src/main/java/com/furb/phapayment/payment/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-payment/src/main/java/com/furb/phapayment/payment/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-payment/src/main/java/com/furb/phapayment/payment/PaymentConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-payment/src/main/java/com/furb/phapayment/payment/PaymentConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pha-payment/src/main/java/com/furb/phapayment/payment/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pha-payment/src/main/java/com/furb/phapayment/payment/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-stock/target/classes/com/furb/phastock/PhaStockApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/pha-stock/target/classes/com/furb/phastock/PhaStockApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-stock/target/classes/com/furb/phastock/config/RabbitMQConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-stock/target/classes/com/furb/phastock/config/RabbitMQConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-stock/target/classes/com/furb/phastock/stock/StockConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/pha-stock/target/classes/com/furb/phastock/stock/StockConsumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pha-stock/target/classes/com/furb/phastock/stock/StockService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pha-stock/target/classes/com/furb/phastock/stock/StockService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,30 +49,30 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.PharmacyApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/mumu/Documents/skull/distributed-systems/pharmacy",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.PharmacyApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mumu/Documents/skull/distributed-systems/pharmacy&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pha-invoice/src/main/resources" />
