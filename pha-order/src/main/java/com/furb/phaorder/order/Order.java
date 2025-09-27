@@ -1,21 +1,19 @@
 package com.furb.phaorder.order;
 
-import lombok.Getter;
 import lombok.NonNull;
 
 import java.util.UUID;
 
-@Getter
-public class Order {
-    
-    @NonNull
-    private UUID id;
-    
-    @NonNull
-    private String product;
+public record Order(
 
-    private int quantity;
+        @NonNull
+        UUID id,
 
-    private double price;
-    
-}
+        @NonNull
+        String product,
+
+        int quantity,
+
+        double price
+
+    ) {}

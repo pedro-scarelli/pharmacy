@@ -13,10 +13,12 @@ public class StockService {
 
     private final CustomMessageSender customMessageSender;
 
+    private final Stock stock;
+
     public void verifyIfItemQuantityIsAvailableOnStock(OrderMessage orderMessage) {
         log.info("Processando verificação de estoque para pedido: {}", orderMessage.getOrderId());
 
-        var isQuantityAvailable = verifyStockAvailability(orderMessage);
+        var isQuantityAvailable = stock.verifyStockAvailability(orderMessage.getProduct(), orderMessage.getQuantity());
         customMessageSender.sendMessage(
                 new StockResponseMessage(orderMessage.getOrderId(), isQuantityAvailable),
                 RabbitMQConnection.PHARMACY_EXCHANGE,
@@ -26,14 +28,4 @@ public class StockService {
         log.info("Resposta de estoque enviada para pedido: {}", orderMessage.getOrderId());
     }
 
-    private boolean verifyStockAvailability(OrderMessage orderMessage) {
-        int chance = (int) (Math.random() * 100);
-        if (chance < 60) {
-            log.info("Estoque disponível para o pedido {}.", orderMessage.getOrderId());
-            return true;
-        }
-
-        log.info("Estoque INDISPONÍVEL para o pedido {}.", orderMessage.getOrderId());
-        return false;
-    }
 }

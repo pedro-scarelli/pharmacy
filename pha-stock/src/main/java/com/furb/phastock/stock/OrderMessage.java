@@ -10,7 +10,7 @@ import java.util.UUID;
 public class OrderMessage {
 
     private UUID orderId;
-    private Integer itemNumber;
+    private String product;
     private Integer quantity;
 
 }

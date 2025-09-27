@@ -22,6 +22,6 @@ public class OrderController {
     public ResponseEntity<Map<String, String>> criarPedido(@RequestBody Order order) {
         orderService.createOrder(order);
 
-        return new ResponseEntity<>(Map.of("pedidoId", order.getId().toString()), HttpStatus.CREATED);
+        return new ResponseEntity<>(Map.of("pedidoId", order.id().toString()), HttpStatus.CREATED);
     }
 }

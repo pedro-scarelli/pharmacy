@@ -14,7 +14,7 @@
         <module name="pha-payment" />
         <module name="pha-stock" />
       </profile>
-      <profile name="Annotation profile for pharmacy_invoice" enabled="true">
+      <profile name="Annotation profile for pha-invoice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />

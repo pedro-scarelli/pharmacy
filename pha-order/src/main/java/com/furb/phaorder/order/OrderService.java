@@ -20,16 +20,16 @@ public class OrderService {
     private final ObjectMapper objectMapper;
 
     public void createOrder(Order order) {
-        log.info("Criando pedido: {}", order.getId());
+        log.info("Criando pedido: {}", order.id());
         
         verifyStock(order);
     }
 
     private void verifyStock(Order order) {
         var message = new OrderMessage(
-            order.getId(),
-            1,
-            1
+            order.id(),
+            order.product(),
+            order.quantity()
         );
 
         customMessageSender.sendMessage(
@@ -38,7 +38,7 @@ public class OrderService {
             RabbitMQConnection.VERIFY_STOCK_ROUTING_KEY
         );
 
-        log.info("Enviado para verificação de estoque: {}", order.getId());
+        log.info("Enviado para verificação de estoque: {}", order.id());
     }
 
     public void processStockResponse(StockResponseMessage message) {
