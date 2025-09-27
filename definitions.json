@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "name": "admin",
+      "password": "admin",
+      "tags": "administrator"
+    }
+  ],
+  "vhosts": [
+    { "name": "/" }
+  ],
+  "permissions": [
+    {
+      "user": "admin",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "exchanges": [
+    {"name": "farmacia", "vhost": "/", "type": "direct", "durable": true}
+  ],
+  "queues": [
+    {"name": "pagamento.processado", "vhost": "/", "durable": true},
+    {"name": "resposta_estoque", "vhost": "/", "durable": true},
+    {"name": "pedido_estoque", "vhost": "/", "durable": true},
+    {"name": "pagamento", "vhost": "/", "durable": true}
+  ],
+  "bindings": [
+    {"source": "farmacia", "vhost": "/", "destination": "pagamento.processado", "destination_type": "queue", "routing_key": "pagamento.processado"},
+    {"source": "farmacia", "vhost": "/", "destination": "resposta_estoque", "destination_type": "queue", "routing_key": "resposta_estoque"},
+    {"source": "farmacia", "vhost": "/", "destination": "pedido_estoque", "destination_type": "queue", "routing_key": "verificar_estoque"},
+    {"source": "farmacia", "vhost": "/", "destination": "pagamento", "destination_type": "queue", "routing_key": "pagamento.solicitado"}
+  ]
+}

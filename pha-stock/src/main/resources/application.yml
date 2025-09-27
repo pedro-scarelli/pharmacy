@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: phaorder
+
+api:
+  rabbitmq:
+    host: ${RABBITMQ_HOST:rabbitmq}
+    port: ${RABBITMQ_PORT:5672}
+    amqp-port: ${RABBITMQ_AMQP_PORT:5672}
+    ui-port: ${RABBITMQ_MANAGEMENT:15672}
+    user: ${RABBITMQ_USERNAME:admin}
+    password: ${RABBITMQ_PASSWORD:admin}
