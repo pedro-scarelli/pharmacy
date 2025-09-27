@@ -1,7 +1,7 @@
 package com.furb.phastock.stock;
 
-import com.furb.phastock.config.CustomMessageSender;
-import com.furb.phastock.config.RabbitMQConnection;
+import com.furb.phastock.configuration.CustomMessageSender;
+import com.furb.phastock.configuration.RabbitMQConnection;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

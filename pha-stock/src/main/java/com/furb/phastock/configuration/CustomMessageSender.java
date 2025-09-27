@@ -1,10 +1,11 @@
-package com.furb.phaorder.config;
+package com.furb.phastock.configuration;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
+
 import tools.jackson.databind.ObjectMapper;
 
 @Service

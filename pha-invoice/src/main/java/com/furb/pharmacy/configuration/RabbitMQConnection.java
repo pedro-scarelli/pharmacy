@@ -5,17 +5,17 @@ import com.rabbitmq.client.ConnectionFactory;
 
 public class RabbitMQConnection {
 
-    public static final String QUEUE_ORDER = "pagamento.processado";
+    public static final String ORDER_QUEUE = "pagamento.processado";
 
     private final ConnectionFactory factory;
 
 
-    public RabbitMQConnection(RabbitMQConfig rabbitMqConfig) {
+    public RabbitMQConnection(RabbitMQConfiguration rabbitMqConfiguration) {
         factory = new ConnectionFactory();
-        factory.setHost(rabbitMqConfig.host());
-        factory.setPort(rabbitMqConfig.port());
-        factory.setUsername(rabbitMqConfig.user());
-        factory.setPassword(rabbitMqConfig.password());
+        factory.setHost(rabbitMqConfiguration.host());
+        factory.setPort(rabbitMqConfiguration.port());
+        factory.setUsername(rabbitMqConfiguration.user());
+        factory.setPassword(rabbitMqConfiguration.password());
 
         instantiateConnection();
     }

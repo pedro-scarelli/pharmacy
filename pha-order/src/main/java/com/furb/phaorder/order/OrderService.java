@@ -1,7 +1,7 @@
 package com.furb.phaorder.order;
 
-import com.furb.phaorder.config.CustomMessageSender;
-import com.furb.phaorder.config.RabbitMQConnection;
+import com.furb.phaorder.configuration.CustomMessageSender;
+import com.furb.phaorder.configuration.RabbitMQConnection;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

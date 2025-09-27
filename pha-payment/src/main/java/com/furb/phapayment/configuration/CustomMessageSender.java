@@ -1,4 +1,4 @@
-package com.furb.phastock.config;
+package com.furb.phapayment.configuration;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.Message;

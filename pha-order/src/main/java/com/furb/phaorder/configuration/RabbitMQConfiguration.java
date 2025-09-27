@@ -1,10 +1,10 @@
-package com.furb.phaorder.config;
+package com.furb.phaorder.configuration;
 
 import lombok.NonNull;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "api.rabbitmq")
-public record RabbitMQConfig(
+public record RabbitMQConfiguration(
 
         @NonNull
         String host,

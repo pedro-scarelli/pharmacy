@@ -17,7 +17,7 @@ public class InvoiceConsumer {
     private final InvoiceService service;
     private final ObjectMapper objectMapper;
 
-    @RabbitListener(queues = RabbitMQConnection.QUEUE_ORDER)
+    @RabbitListener(queues = RabbitMQConnection.ORDER_QUEUE)
     public void consume(Message message) {
         var invoiceMessage = objectMapper.readValue(message.getBody(), UUID.class);
         log.info("Generating invoice from order {}", invoiceMessage);

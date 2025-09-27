@@ -1,7 +1,7 @@
 package com.furb.phapayment.payment;
 
-import com.furb.phapayment.config.CustomMessageSender;
-import com.furb.phapayment.config.RabbitMQConnection;
+import com.furb.phapayment.configuration.CustomMessageSender;
+import com.furb.phapayment.configuration.RabbitMQConnection;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

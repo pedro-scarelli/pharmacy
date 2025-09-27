@@ -5,9 +5,11 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pha-orders/pom.xml" />
+        <option value="$PROJECT_DIR$/pharmacy_invoice/pom.xml" />
+        <option value="$PROJECT_DIR$/pha-invoice/pom.xml" />
+        <option value="$PROJECT_DIR$/pha-order/pom.xml" />
         <option value="$PROJECT_DIR$/pha-payment/pom.xml" />
         <option value="$PROJECT_DIR$/pha-stock/pom.xml" />
-        <option value="$PROJECT_DIR$/pharmacy_invoice/pom.xml" />
       </list>
     </option>
   </component>

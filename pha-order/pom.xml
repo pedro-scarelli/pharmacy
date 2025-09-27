@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.furb</groupId>
-	<artifactId>pharmacy</artifactId>
+	<artifactId>pha-order</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>pha-order</name>
 	<description>pharmacy order service</description>

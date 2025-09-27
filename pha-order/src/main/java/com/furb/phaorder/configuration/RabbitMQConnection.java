@@ -1,4 +1,4 @@
-package com.furb.phaorder.config;
+package com.furb.phaorder.configuration;
 
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -16,12 +16,12 @@ public class RabbitMQConnection {
     private final ConnectionFactory factory;
 
 
-    public RabbitMQConnection(RabbitMQConfig rabbitMqConfig) {
+    public RabbitMQConnection(RabbitMQConfiguration rabbitMqConfiguration) {
         factory = new ConnectionFactory();
-        factory.setHost(rabbitMqConfig.host());
-        factory.setPort(rabbitMqConfig.port());
-        factory.setUsername(rabbitMqConfig.user());
-        factory.setPassword(rabbitMqConfig.password());
+        factory.setHost(rabbitMqConfiguration.host());
+        factory.setPort(rabbitMqConfiguration.port());
+        factory.setUsername(rabbitMqConfiguration.user());
+        factory.setPassword(rabbitMqConfiguration.password());
 
         instantiateConnection();
     }
